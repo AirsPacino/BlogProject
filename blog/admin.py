@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . import models
+from .models import Category,Post,Tag
 
 # Register your models here.
 
@@ -9,9 +9,9 @@ class PostAdmin(admin.ModelAdmin):
         'title',
         'created_time',
         'modified_time',
-        'category',
-        'author',
+        'author'
     ]
-admin.site.register(models.Post, PostAdmin)
-admin.site.register(models.Category)
-admin.site.register(models.Tag)
+
+admin.site.register(Category)
+admin.site.register(Post, PostAdmin)
+admin.site.register(Tag)
